@@ -6,6 +6,7 @@ import os
 ## csv file path
 
 filepath = os.path.join('Resources', 'budget_data.csv')
+output_file = os.path.join('Analysis', 'output.csv')
 
 ## Initializing variables
 
@@ -17,7 +18,7 @@ total = 0              # total of $ profit/losses
 pl_list =[]            # set of profit/losses
 pl_index = 1           # profit/losses is stored in index [1] in dataset
 deltalist = [0,]       # set of change of profit/losses
-delta_period = []
+deltaperiod = []
 
 ## Analysis
 
@@ -27,6 +28,7 @@ with open(filepath, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')  
     if csv.Sniffer().has_header:
         fields = next(csvreader)
+        fields.append('diff')
     for row in csvreader:
         rows.append(row)
     for month in rows:
@@ -55,8 +57,21 @@ with open(filepath, 'r') as csvfile:
     diff_average = float(delta_sum / delta_len)
 
 ### Part IV: The greatest increase in profits (date and amount) over the entire period
-    for y in range(len(deltalist)):
-        delta_period.append(set(period[y], pl_list[y]))
+
+output = zip(period, pl_list, deltalist)
+
+with open(output_file, 'w') as datafile:
+    writer = csv.writer(datafile)
+    writer.writerow(fields)
+    writer.writerows(output)
+
+
+
+
+
+
+    
+        
 
 ### Part V: The greatest decrease in losses (date and amount) over the entire period 
 
