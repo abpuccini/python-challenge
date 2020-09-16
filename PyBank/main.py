@@ -15,20 +15,20 @@ headers = []                                        # set of data header
 rows = []                                           # set of data 
 period = []                                         # set of period
 pl_list =[]                                         # set of profit/losses
-deltalist = []                                # set of change of profit/losses 
+delta_list = []                                     # set of changes of profit/losses 
 
 ## Analysis
 
-### Reading file and store data
+### Part I: Reading file, store header and appending lists
 
 with open(data_filepath, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')  
     headers = next(csvreader)                       # Header stored
     for row in csvreader:                           
         rows.append(row)                            # List of data in original file
-    for data in rows:
-        momth_index = 0                             # Index of each month in rows is [0]
-        pl_index = 1                                # Index of each profit/losses in rows is [1]
+    for data in rows:                               # Each data in rows is a subset
+        momth_index = 0                             # Index of each month in data is [0]
+        pl_index = 1                                # Index of each profit/losses in data is [1]
         period.append(data[momth_index])            # List of periods
         pl_list.append(int(data[pl_index]))         # List of profit/losses
     for x in range(len(pl_list)):                   # x represents index of data in pl_list
@@ -36,35 +36,35 @@ with open(data_filepath, 'r') as csvfile:
             delta = 0                               # Index[0] has no comparison to calculate differences
         else:
             delta = pl_list[x] - pl_list[x-1]       # delta is profit/losses differences between period x and x-1
-        deltalist.append(int(delta))                # List of changes in profit/losses
+        delta_list.append(int(delta))               # List of changes in profit/losses
         
-### Part I: The total number of months included in the dataset
+### Part II: The total number of months included in the dataset
 
 month = len(period)                       
         
-### Part II: The net total amount of "Profit/Losses" over the entire period
+### Part III: The net total amount of "Profit/Losses" over the entire period
 
 total = sum(pl_list)                        
 
-### Part III: The average of the changes in "Profit/Losses" over the entire period        
+### Part IV: The average of the changes in "Profit/Losses" over the entire period        
      
-delta_sum = sum(deltalist)
-delta_len = len(deltalist) - 1                      # First index of deltalist is N/A, to have 
-diff_avg = round(float(delta_sum / delta_len), 2)
+delta_sum = sum(delta_list)
+delta_no = len(delta_list) - 1                      # Number of data in delta_list which is not included index[0] 
+diff_avg = round(float(delta_sum / delta_no), 2)
 
-### Part IV: The greatest increase in profits (date and amount) over the entire period
+### Part V: The greatest increase in profits (date and amount) over the entire period
 
-Max = max(deltalist)
-max_period = period[deltalist.index(Max)]
+Max = max(delta_list)
+max_period = period[delta_list.index(Max)]
 
-### Part V: The greatest decrease in losses (date and amount) over the entire period 
+### Part VI: The greatest decrease in losses (date and amount) over the entire period 
 
-Min = min(deltalist)
-min_period = period[deltalist.index(Min)]
+Min = min(delta_list)
+min_period = period[delta_list.index(Min)]
 
-### Part VI: Storing additional data into CSV file
+### Part VII: Storing additional data into CSV file
 
-output = zip(period, pl_list, deltalist)
+output = zip(period, pl_list, delta_list)
 output_headers = headers + ['Diff']
 
 with open(output_filepath, 'w') as datafile:
@@ -72,7 +72,7 @@ with open(output_filepath, 'w') as datafile:
     writer.writerow(output_headers)
     writer.writerows(output)
 
-### Part VII: Analysis Result and exporting result to txt.file
+### Part VIII: Analysis Result and exporting result to txt.file
 
 result = [
     'Financial Analysis ',
