@@ -27,8 +27,8 @@ with open(data_filepath, 'r') as csvfile:
     for row in csvreader:                           
         rows.append(row)                            # List of data in original file
     for data in rows:                               # Each data in rows is a subset
-        momth_index = 0                             # Index of each month in data is [0]
-        pl_index = 1                                # Index of each profit/losses in data is [1]
+        momth_index = 0                             # Index of months in data is [0]
+        pl_index = 1                                # Index of profit/losses in data is [1]
         period.append(data[momth_index])            # List of periods
         pl_list.append(int(data[pl_index]))         # List of profit/losses
     for x in range(len(pl_list)):                   # x represents index of data in pl_list

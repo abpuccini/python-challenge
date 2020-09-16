@@ -1,3 +1,5 @@
+# PyPoll Analysis
+
 ## Implementing modules 
 
 import csv
@@ -19,7 +21,7 @@ with open(datafile, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')  
     header = next(csvreader)                                # Header stored
     for rows in csvreader:
-        name_index = 2
+        name_index = 2                                      # Index of names in rows is [2]
         name = rows[name_index]
         candidate.append(name)                              # Adding name to the list
     for n in candidate:                                     # n represents each element in candidate list
@@ -27,8 +29,15 @@ with open(datafile, 'r') as csvfile:
             candidate_name.append(n)                        # List of candidates
     for i in candidate_name:                                # i represents each element in candidate_name list 
         candidate_votes[i] = candidate.count(i)             # Adding key and value into candidate_vote dictionary
+        total = sum(candidate_votes.values())               # Sum of all values in dictionary
+        
+        
 
-print(candidate_votes)
+
+
+
+
+print(total)
 
 
         
