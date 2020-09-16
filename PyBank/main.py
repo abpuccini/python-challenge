@@ -1,4 +1,6 @@
-## Implementing modules 
+# PyBank Analysis
+
+# Implementing modules 
 
 import csv
 import os
@@ -9,17 +11,15 @@ data_filepath = os.path.join('Resources', 'budget_data.csv')
 output_filepath = os.path.join('Analysis', 'output.csv')
 analysis_filepath = os.path.join('Analysis', 'PyBank-analysis.txt')
 
-## Initializing sets
+## Analysis
+
+### Part I: Reading file, Storing header and Initializing sets
 
 headers = []                                        # set of data header
 rows = []                                           # set of data 
 period = []                                         # set of period
 pl_list =[]                                         # set of profit/losses
 delta_list = []                                     # set of changes of profit/losses 
-
-## Analysis
-
-### Part I: Reading file, store header and appending lists
 
 with open(data_filepath, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')  
