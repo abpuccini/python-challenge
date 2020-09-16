@@ -1,4 +1,4 @@
-# PyBank Analysis
+# PyBank
 
 # Implementing modules 
 
@@ -11,7 +11,7 @@ data_filepath = os.path.join('Resources', 'budget_data.csv')
 output_filepath = os.path.join('Analysis', 'output.csv')
 analysis_filepath = os.path.join('Analysis', 'PyBank-analysis.txt')
 
-## Analysis
+## Financial Analysis
 
 ### Part I: Reading file, Storing header and Initializing sets
 
