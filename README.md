@@ -4,20 +4,20 @@
 
 ## PyBank
 
-#### Implementing modules 
+### Implementing modules 
 
-import csv
-import os
+    import csv
+    import os
 
-File path
+    # File path
 
     data_filepath = os.path.join('Resources', 'budget_data.csv')
     output_filepath = os.path.join('Analysis', 'output.csv')
     analysis_filepath = os.path.join('Analysis', 'PyBank-analysis.txt')
 
-#### Financial Analysis
+### Financial Analysis
 
-##### Python scripts
+#### Python scripts
 
 **Part I: Reading file, Storing header and Initializing sets**
 
