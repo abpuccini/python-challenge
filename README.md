@@ -4,6 +4,10 @@
 
 ## PyBank
 
+Datafile >> [Click here to view file](Resources/PyBank_budget_data.csv)
+
+**Python scripts**
+
 ### Implementing modules 
 
     import csv
@@ -16,8 +20,6 @@
     analysis_filepath = os.path.join('Analysis', 'PyBank-analysis.txt')
 
 ### Financial Analysis
-
-#### Python scripts
 
 **Part I: Reading file, Storing header and Initializing sets**
 
