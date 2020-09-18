@@ -225,7 +225,6 @@ Creating Python script for analysis the poll data. The analysis of votes will co
     - **In .txt File**
 
     ![Pypoll_terminal](Images/pypoll_txt_result.png)
-
 ---
 
 © Atcharaporn B Puccini
