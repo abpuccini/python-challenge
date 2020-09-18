@@ -18,9 +18,9 @@ Creating Python script for analysis the financial records of the company. The an
 
 *PyBank* >> [Click here to view file](Resources/PyBank_budget_data.csv)
 
-### Python Script 
+### Python Script and Ananlysis
 
-- Implementing Modules 
+**Part I: Implementing Modules and defining file path**
 
     import csv
     import os
@@ -31,9 +31,7 @@ Creating Python script for analysis the financial records of the company. The an
     output_filepath = os.path.join('Analysis', 'output.csv')
     analysis_filepath = os.path.join('Analysis', 'PyBank-analysis.txt')
 
-- Financial Analysis
-
-- Part I: Reading file, Storing header and Initializing sets
+**Part II: Reading file, Storing header and Initializing sets**
 
     headers = []                                        # set of data header
     rows = []                                           # set of data 
