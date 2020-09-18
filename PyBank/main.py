@@ -72,7 +72,7 @@ with open(output_filepath, 'w') as datafile:
     writer.writerow(output_headers)
     writer.writerows(output)
 
-### Part VIII: Analysis Result and exporting result to txt.file
+### Part VIII: Analysis Result, Print to Terminal and Exporting result to txt.file
 
 result = [
     'Financial Analysis ',
@@ -86,7 +86,7 @@ result = [
 
 with open(analysis_filepath, 'w') as txtfile:
     for r in result:                                # r represents each element in result list
-        print(r)
-        txtfile.write(str(r) + '\n')
+        print(r)                                    # print to terminal
+        txtfile.write(str(r) + '\n')                # write to .txt file
 
 
