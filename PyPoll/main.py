@@ -7,7 +7,8 @@ import os
 
 ## File path
 
-datafile = os.path.join('Resources', 'election_data.csv')
+data_filepath = os.path.join('Resources', 'election_data.csv')
+analysis_filepath = os.path.join('Analysis', 'PyPoll-analysis.txt')
 
 ## Election Results
 
@@ -17,9 +18,9 @@ candidate_votes = {}                                        # Dictionary {Candid
 election_votes = []                                         # List of all votes
 candidate_name = []                                         # List of election_votes names               
 percent_votes = []                                          # List of percentage votes for each election_votes
-winner = []
+chart = []
 
-with open(datafile, 'r') as csvfile:
+with open(data_filepath, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')  
     header = next(csvreader)                                # Header stored
     for rows in csvreader:
@@ -39,19 +40,48 @@ total = sum(candidate_votes.values())                       # Sum of all values 
 
 ### Part III: Number and Percentage of Each candidates' votes
 
-candidate_votes_list = list(candidate_votes.values())        # Creating vote count list
+vote_counts = list(candidate_votes.values())        # Creating vote count list
 
-for p in candidate_votes_list:     
+for p in vote_counts:     
     p_votes = round(float(p / total * 100), 2)               # % of votes for each election_votes
     percent_votes.append("%.3f" % p_votes)                   # Adding % of votes with 3 decimals to the list
     
 ### Part IV: The Winner
 
-for m in candidate_votes_list:
-    if m == max(candidate_votes_list):
-        name = candidate_name[candidate_votes_list.index(m)]    # Identify winner by 
+#### Identify winner by using index of the maximum votes because they are arranged in the same order
 
-print(name)
+for m in vote_counts:
+    if m == max(vote_counts):
+        winner = candidate_name[vote_counts.index(m)]
+
+### Part V: Election Result and exporting result to txt.file
+
+#### Creating votes_chart list containing name, %votes and vote counts
+
+for i in range(len(candidate_name)):
+    votes_chart = f'{candidate_name[i]}: {percent_votes[i]}% ({vote_counts[i]})'
+    chart.append(votes_chart)
+
+result = [
+    'Election Results',
+    '-------------------------',
+    f'Total Votes: {total}',
+    '-------------------------',
+    *chart,                                         # *chart >> To unpack the list
+    '-------------------------',
+    f'Winner: {winner}',
+    '-------------------------'
+]
+
+with open(analysis_filepath, 'w') as txtfile:
+    for r in result:                                # r represents each element in result list
+        print(r)
+        txtfile.write(str(r) + '\n')
+
+
+
+
+
 
 
 
