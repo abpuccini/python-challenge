@@ -109,11 +109,11 @@ Creating Python script for analysis the financial records of the company. The an
 
 ***Result printed in Terminal and .txt file***
 
-*In terminal*
+- **In terminal**
 
 ![Pybank_terminal](Images/pybank_terminal_result.png)
 
-*In .txt file*
+- **In .txt file**
 
 ![Pybank_terminal](Images/pybank_txt_result.png)
 
