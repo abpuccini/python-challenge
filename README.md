@@ -1,14 +1,26 @@
-# Py Me UP, Charlie !!!
+# Py Me UP, Charlie.
 
-*Applying Python scripting skills into analysis!*
+Python will be a great option for an analysis of a large data. PyBank and PyPoll are the examples how to applying Python scripting skills into analysis.
 
 ## PyBank
 
-Datafile >> [Click here to view file](Resources/PyBank_budget_data.csv)
+**Background**
 
-**Python scripts**
+Creating Python script for analysis the financial records of the company. The analysis will contain the calculation of following:
 
-### Implementing modules 
+- The total number of months included in the dataset
+- The net total amount of "Profit/Losses" over the entire period
+- The average of the changes in "Profit/Losses" over the entire period
+- The greatest increase in profits (date and amount) over the entire period
+- The greatest decrease in losses (date and amount) over the entire period
+
+**Datafile**
+
+*PyBank* >> [Click here to view file](Resources/PyBank_budget_data.csv)
+
+### Python Script 
+
+- Implementing Modules 
 
     import csv
     import os
@@ -19,9 +31,9 @@ Datafile >> [Click here to view file](Resources/PyBank_budget_data.csv)
     output_filepath = os.path.join('Analysis', 'output.csv')
     analysis_filepath = os.path.join('Analysis', 'PyBank-analysis.txt')
 
-### Financial Analysis
+- Financial Analysis
 
-**Part I: Reading file, Storing header and Initializing sets**
+- Part I: Reading file, Storing header and Initializing sets
 
     headers = []                                        # set of data header
     rows = []                                           # set of data 
@@ -99,13 +111,25 @@ Datafile >> [Click here to view file](Resources/PyBank_budget_data.csv)
 
 ##### Result printed in Terminal and .txt file
 
-**In terminal**
+*In terminal*
+
 ![Pybank_terminal](Images/pybank_terminal_result.png)
 
-**In .txt file**
+*In .txt file*
+
 ![Pybank_terminal](Images/pybank_txt_result.png)
 
+---
 
+## PyPoll
+
+**Background**
+
+
+
+**Datafile**
+
+PyPoll >> [Click here to view file](Resources/PyPoll_election_data.csv)
 
 
 
