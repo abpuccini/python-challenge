@@ -92,6 +92,8 @@ Creating Python script for analysis the financial records of the company. The an
 
 **Part IX: Analysis Result, Print to Terminal and Exporting result to txt.file**
 
+- **Analysis Result Python Script**
+
     result = [
         'Financial Analysis ',
         '------------------------------------------------------',
@@ -107,15 +109,15 @@ Creating Python script for analysis the financial records of the company. The an
             print(r)                                    # print to terminal
             txtfile.write(str(r) + '\n')                # write to .txt file
 
-***Result printed in Terminal and .txt file***
+- **Result printed in Terminal and .txt file**
 
-- **In terminal**
+    - **In terminal**
 
-![Pybank_terminal](Images/pybank_terminal_result.png)
+    ![Pybank_terminal](Images/pybank_terminal_result.png)
 
-- **In .txt file**
+    - **In .txt file**
 
-![Pybank_terminal](Images/pybank_txt_result.png)
+    ![Pybank_terminal](Images/pybank_txt_result.png)
 
 ---
 
