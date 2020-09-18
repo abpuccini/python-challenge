@@ -4,7 +4,7 @@ Python will be a great option for an analysis of a large data. PyBank and PyPoll
 
 ## PyBank
 
-**Background**
+### Background
 
 Creating Python script for analysis the financial records of the company. The analysis will contain the calculation of following:
 
@@ -14,9 +14,9 @@ Creating Python script for analysis the financial records of the company. The an
 - The greatest increase in profits (date and amount) over the entire period
 - The greatest decrease in losses (date and amount) over the entire period
 
-**Datafile**
+### Datafile
 
-*PyBank* >> [Click here to view file](Resources/PyBank_budget_data.csv)
+***PyBank*** >> [Click here to view file](Resources/PyBank_budget_data.csv)
 
 ### Python Script and Ananlysis
 
@@ -94,20 +94,20 @@ Creating Python script for analysis the financial records of the company. The an
 
 - **Analysis Result Python Script**
 
-    result = [
-        'Financial Analysis ',
-        '------------------------------------------------------',
-        f'Total months: {month}',
-        f'Net Total of profit/loss: ${total}',
-        f'Average of change of profit/loss: ${diff_avg}',
-        f'The greatest increase in Profit: {max_period} (${Max})',
-        f'The greatest decrease in Profit: {min_period} (${Min})'
-    ]
+        result = [
+            'Financial Analysis ',
+            '------------------------------------------------------',
+            f'Total months: {month}',
+            f'Net Total of profit/loss: ${total}',
+            f'Average of change of profit/loss: ${diff_avg}',
+            f'The greatest increase in Profit: {max_period} (${Max})',
+            f'The greatest decrease in Profit: {min_period} (${Min})'
+        ]
 
-    with open(analysis_filepath, 'w') as txtfile:
-        for r in result:                                # r represents each element in result list
-            print(r)                                    # print to terminal
-            txtfile.write(str(r) + '\n')                # write to .txt file
+        with open(analysis_filepath, 'w') as txtfile:
+            for r in result:                                # r represents each element in result list
+                print(r)                                    # print to terminal
+                txtfile.write(str(r) + '\n')                # write to .txt file
 
 - **Result printed in Terminal and text File**
 
@@ -122,7 +122,7 @@ Creating Python script for analysis the financial records of the company. The an
 
 ## PyPoll
 
-**Background**
+### Background
 
 Creating Python script for analysis the poll data. The analysis of votes will contain the calculation of following:
 
@@ -132,9 +132,9 @@ Creating Python script for analysis the poll data. The analysis of votes will co
 - The total number of votes each candidate won
 - The winner of the election based on popular vote.
 
-**Datafile**
+### Datafile
 
-PyPoll >> [Click here to view file](Resources/PyPoll_election_data.csv)
+***PyPoll*** >> [Click here to view file](Resources/PyPoll_election_data.csv)
 
 ### Python Script and Ananlysis
 
@@ -200,21 +200,21 @@ PyPoll >> [Click here to view file](Resources/PyPoll_election_data.csv)
 
 - **Analysis Result Python Script**
 
-    result = [
-        'Election Results',
-        '-------------------------',
-        f'Total Votes: {total}',
-        '-------------------------',
-        *chart,                                         # *chart >> To unpack the list
-        '-------------------------',
-        f'Winner: {winner}',
-        '-------------------------'
-    ]
+        result = [
+            'Election Results',
+            '-------------------------',
+            f'Total Votes: {total}',
+            '-------------------------',
+            *chart,                                         # *chart >> To unpack the list
+            '-------------------------',
+            f'Winner: {winner}',
+            '-------------------------'
+        ]
 
-    with open(analysis_filepath, 'w') as txtfile:
-        for r in result:                                # r represents each element in result list
-            print(r)
-            txtfile.write(str(r) + '\n')
+        with open(analysis_filepath, 'w') as txtfile:
+            for r in result:                                # r represents each element in result list
+                print(r)
+                txtfile.write(str(r) + '\n')
 
 - **Result printed in Terminal and .txt File**
 
